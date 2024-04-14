@@ -109,7 +109,7 @@
                     <!-- Containers -->
                     <h4 class="mb-3">{{ $tc("container", 2) }}</h4>
 
-                    <div v-if="isEditMode" class="input-group mb-3">
+                    <div v-if="isEditMode" class="input-group ">
                         <input
                             v-model="newContainerName"
                             placeholder="New Container Name..."
@@ -121,7 +121,7 @@
                         </button>
                     </div>
 
-                    <div ref="containerList">
+                    <div ref="containerList m-0">
                         <Container
                             v-for="(service, name) in jsonConfig.services"
                             :key="name"
@@ -158,7 +158,7 @@
                             :endpoint="endpoint"
                             :rows="combinedTerminalRows"
                             :cols="combinedTerminalCols"
-                            style="height: 500px;"
+                            style="height: 800px;"
                         ></Terminal>
                     </div>
                 </div>
