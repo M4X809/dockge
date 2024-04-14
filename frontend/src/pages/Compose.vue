@@ -82,7 +82,7 @@
             </transition>
 
             <div v-if="stack.isManagedByDockge" class="row">
-                <div class="col-lg-6">
+                <div :class="isEditMode ? 'col-lg-6' : 'col-lg-12'">
                     <!-- General -->
                     <div v-if="isAdd">
                         <h4 class="mb-3">{{ $t("general") }}</h4>
@@ -158,11 +158,11 @@
                             :endpoint="endpoint"
                             :rows="combinedTerminalRows"
                             :cols="combinedTerminalCols"
-                            style="height: 350px;"
+                            style="height: 500px;"
                         ></Terminal>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div v-if="isEditMode" class="col-lg-6">
                     <h4 class="mb-3">{{ stack.composeFileName }}</h4>
 
                     <!-- YAML editor -->
